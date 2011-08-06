@@ -1,0 +1,94 @@
+### Installation
+
+Put [ li3_swiftmailer](https://github.com/greut/li3_swiftmailer) and [ SwiftMailer](http://swiftmailer.org/) into your `libraries` directory.
+
+{{{
+$ git submodule add https://github.com/greut/li3_swiftmailer.git libraries/li3_swiftmailer
+$ git submodule add https://github.com/swiftmailer/swiftmailer.git libraries/swiftmailer
+}}}
+
+Putting them into your `app` should work as well.
+
+### Configuration
+
+In your `config/bootstrap/libraries.php` add this line:
+
+{{{
+Libraries::add('li3_swiftmailer');
+}}}
+
+And then configure who do you want to use the Mailer using `li3_swiftmailer\mailer\Transport`.
+
+#### SMTP
+
+{{{
+use li3_swiftmailer\mailer\Transports;
+
+Transports::config(array('default' => array(
+    'adapter' => 'Smtp',
+    'host' => 'smtp.google.com',
+    'port' => 587,
+    'encryption' => 'tls',
+    'username' => 'you@gmail.com',
+    'password' => '#########'
+)));
+}}}
+
+#### Sendmail
+
+{{{
+use li3_swiftmailer\mailer\Transports;
+
+Transports::config(array('default' => array(
+    'adapter' => 'Sendmail',
+    'command' => '/usb/sbin/sendmail -bs -i'
+)));
+}}}
+
+#### PHP `mail()`
+
+{{{
+use li3_swiftmailer\mailer\Transports;
+
+Transports::config(array('default' => array(
+    'adapter' => 'PhpMail'
+)));
+}}}
+
+#### Multi-env system
+
+{{{
+use li3_swiftmailer\mailer\Transports;
+
+Transports::config(array('default' => array(
+    'production' => array(/* … */),
+    'development' => array(/* … */),
+    'test' => array(/* … */)
+)));
+}}}
+
+### Usage
+
+{{{
+use li3_swiftmailer\mailer\Transports;
+use li3_swiftmailer\mailer\Message;
+
+$mailer = Transports::adapter('default');
+$message = Message::newInstance()
+                  ->setSubject('Hello world')
+                  ->setFrom(array('john.doe@example.org' => 'John Doe'))
+                  ->setTo(array(
+                      'jane.doe@example.org' => 'Jane Doe',
+                      'foo.bar@example.org' => 'Foo Bar'
+                  ))
+                  ->setBody('Hello world!');
+echo $mailer->send($message) ? "success" : "fail";
+}}}
+
+**More info**
+
+ - [ Transports](li3_swiftmailer/mailer/Transports)
+ - [ Message](li3_swiftmailer/mailer/Message)
+ - [ Smtp](li3_swiftmailer/extensions/adapter/mailer/transport/Smtp)
+ - [ Sendmail](li3_swiftmailer/extensions/adapter/mailer/transport/Sendmail)
+ - [ PhpMail](li3_swiftmailer/extensions/adapter/mailer/transport/PhpMail)

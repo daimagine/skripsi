@@ -1,0 +1,3 @@
+html { overflow-y: scroll; } /* This prevents the horizontal scroll bar caused by the vertical scroll bar onload */
+body { background: url(../images/dark-square.png) !important; }
+div.overlay { width: 100%; height: 100%; /*display:none;*/ padding: 50px 0 0 0; margin: 0; }

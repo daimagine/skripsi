@@ -1,0 +1,133 @@
+.signInMenuActive {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: solid 1px #EBEBEB !important;
+    border-right: solid 1px #EBEBEB !important;
+    border-left: solid 1px #EBEBEB !important;
+}
+.personalLinkActive {
+    background: #FFFFFF !important;
+    border: 1px solid transparent !important;
+}
+.signInMenuBoxActive {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.signInMenuSmall {
+    width:150px !important;
+}
+#signInMenu ul {
+    text-align: right;
+    font-size: 1.25em;
+    list-style: inside;
+    padding: 0;
+    margin-top: 0;
+}
+#signInMenu ul li {
+    margin-bottom: 5px;
+    display: block;
+}
+#signInMenu ul li a {
+    color: #c73e14;
+}
+#signInMenu ul li a:hover {
+    text-decoration: underline;
+}
+#signInMenu {
+	display:none;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: solid 1px #EBEBEB;
+    /*box-shadow: 0 3px 3px #888888;*/
+    color: #333333;
+	position:absolute;
+	width:370px;
+	z-index:30;
+	text-align:left;
+	padding:10px;
+	top: 35.5px;
+	right: -1px;
+	margin-top:5px;
+	margin-right: 0px;
+	*margin-right: -1px;
+	font-size:11px;
+}
+#signInMenuLeft {
+    position: relative;
+    height: 100%;
+    float: left;
+    width: 150px;
+    padding-top: 10px;
+    line-height: 2em;
+    text-align: center;
+}
+#signInMenuLeft p {
+    text-align: center !important;
+}
+#signInMenuRight {
+    border-left: solid #F5F5F5 1px;
+    padding-left: 10px;
+    float: right;
+    width: 200px;
+}
+
+#signInMenu input[type=text], #signInMenu input[type=password] {
+	display:block;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #ACE;
+	font-size:11px;
+	margin:0 0 5px;
+	padding:5px;
+	width:185px;
+}
+#signInMenu input[type=submit] {
+    float: right;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    margin-top: 6px;
+}
+.button {
+    text-decoration: none !important;
+    margin: 0 auto;
+}
+#signInMenu input[type=submit], #signInMenu .button {
+    display:block;
+    -moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	padding:4px 2px 4px 2px;
+	font-size:11px;
+	font-weight:bold;
+    background:#888888;
+	border:1px solid #777777;
+	color:#fff;
+	text-shadow:0 -1px 0 #666666;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    width: 80px;
+    margin-top: 8px;
+}
+#signInMenu input[type=submit]:hover, #signInMenu .button:hover,
+#signInMenu input[type=submit]:focus, #signInMenu .button:focus{
+    background:#39d;
+	border:1px solid #39D;
+	color:#fff;
+	text-shadow:0 -1px 0 #2277bb;
+    box-shadow: 1px 1px 1px #88bbd4;
+	cursor:pointer;
+}
+#signInMenu p {
+	margin:0;
+}
+#signInMenu a {
+	color:#6AC;
+}
+#signInMenu label {
+	font-weight:normal;
+}
+#signInMenu p.remember {
+	margin-left: -5px;
+}
+#signInMenu p.forgot, #signInMenu p.complete {
+	clear:both;
+	margin:5px 0;
+}
+#signInMenu p a {
+	color:#27B!important;
+}
